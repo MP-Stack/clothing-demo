@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './Header.styles.scss';
 import {Link} from "react-router-dom";
+import {ReactComponent as HomeIcon} from '../../assets/crown.svg'; 
 import {auth} from '../../clothing/firebase/firebase.utils';
 import {connect} from 'react-redux';
+import CartItem from '../../clothing/cart-item/cart-item';
+import CartDropDown from '../../clothing/cart-dropdown/cart-dropdown';
 
 
 class Header extends Component{
@@ -13,7 +16,7 @@ class Header extends Component{
   <div className="header"> 
    
    <Link to='/' className='head' >
-      HOME
+      <HomeIcon />
     </Link>
     
     <div className="options" >
@@ -29,7 +32,10 @@ class Header extends Component{
          :   
         <Link to='/signin' className="option"> SIGN IN </Link>
       }
+
+        <CartItem />    
       </div>
+      <CartDropDown/>
   </div>)
   }
 }
