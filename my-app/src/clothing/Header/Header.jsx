@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Header.styles.scss';
 import {Link} from "react-router-dom";
 import {ReactComponent as HomeIcon} from '../../assets/crown.svg'; 
@@ -8,11 +8,7 @@ import CartItem from '../../clothing/cart-item/cart-item';
 import CartDropDown from '../../clothing/cart-dropdown/cart-dropdown';
 
 
-class Header extends Component{
-  render(){
-    console.log(this.props)
-
-    return(
+const Header =({currentUser,hidden}) =>(
   <div className="header"> 
    
    <Link to='/' className='head' >
@@ -27,22 +23,25 @@ class Header extends Component{
           CONTACT
         </Link>
       {
-        this.props.currentUser?
+        currentUser?
          <div className="option" onClick={() => auth.signOut()}>SIGN OUT</div> 
-         :   
+          :   
         <Link to='/signin' className="option"> SIGN IN </Link>
       }
 
         <CartItem />    
       </div>
-      <CartDropDown/>
-  </div>)
-  }
-}
+      {
+        hidden? null : <CartDropDown/>
+      }
+  </div>
+  
+)
 
-const mapStateToProps=(state)=>{
+const mapStateToProps=({user:{currentUser}, cart:{hidden}})=>{
   return{
-    currentUser:state.user.currentUser
+    currentUser,
+    hidden
     }
 }
 

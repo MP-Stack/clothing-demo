@@ -1,6 +1,6 @@
 import {createStore} from 'redux';
 
-import allReducer from '../redux/reducers/root.reducer';
+import allReducer from '../redux/root.reducer';
 // import logger from 'redux-logger';
 
 // const middlewares=[logger];

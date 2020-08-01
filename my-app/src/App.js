@@ -7,7 +7,7 @@ import Header from './clothing/Header/Header';
 import ShopPage from './clothing/shoppage/ShopPage';
 import {auth} from './clothing/firebase/firebase.utils';
 import {connect} from 'react-redux';
-import {setCurrentUser} from './redux/actions/user.action';
+import {setCurrentUser} from './redux/user/user.action';
 
 
 
