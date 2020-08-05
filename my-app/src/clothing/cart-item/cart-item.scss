@@ -1,20 +1,20 @@
-.cart-icon{
-  width: 45px;
-  height: 45px;
+.cart-item{
+  width: 100%;
   display: flex;
-  align-items: center;
-  position: relative;
-  justify-content: center;
-  cursor: pointer;
+  height: 80px;
+  margin-bottom: 15px;
 
-  .shopping-icon{
-    width: 28px;
-    height: 28px;
+  img{
+    width: 35%;
   }
-  .item-count{
-    position: absolute;
-    bottom: 10px;
-    font-weight: bold;
 
+  .item-details{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    align-items: flex-start;
+    justify-content: center;
+    
   }
-}
+  }

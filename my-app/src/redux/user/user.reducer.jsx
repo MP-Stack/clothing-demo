@@ -4,7 +4,6 @@ const iState={
 }
 
 const userReducer=(state=iState, action)=>{
-  console.log(action)
   switch(action.type){
     case 'SET_CURRENT_USER':
       return{ 

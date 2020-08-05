@@ -2,7 +2,7 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  // width: 250px;
+  width: 265px;
   height: 340px;
   padding: 20px;
   border: 1px solid black;
@@ -11,6 +11,10 @@
   right: 0;
   z-index: 5;
 
+  .empty-message{
+    font-size: 20px;
+    margin: 100px auto;
+  }
   .cart-items{
     height: 240px;
     display: flex;

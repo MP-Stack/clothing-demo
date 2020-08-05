@@ -8,6 +8,7 @@ import ShopPage from './clothing/shoppage/ShopPage';
 import {auth} from './clothing/firebase/firebase.utils';
 import {connect} from 'react-redux';
 import {setCurrentUser} from './redux/user/user.action';
+import CheckOut from './clothing/checkout/checkout';
 
 
 
@@ -67,7 +68,8 @@ class App extends Component{
           <Route path="/womens" component={Womens} />
           <Route path="/mens" component={Mens} />
           <Route path="/shop" component={ShopPage} />
-          <Route path='/signin' component={SignInAndSignUpPage} />  
+          <Route path='/signin' component={SignInAndSignUpPage} /> 
+          <Route path="/checkout" component={CheckOut} /> 
         </Switch>
     </div>
 )}};

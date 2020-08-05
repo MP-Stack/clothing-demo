@@ -1,167 +1,160 @@
-const SHOP_DATA =[
+const SHOP_DATA= [
+  
   {
-    id:1,
-    title:'Hats',
-    routename:'hats',
-    items:[
-      { 
-        id:1,
-        name:'Brim Cap',
-        imageUrl:'https://blog.samuel-windsor.co.uk/wp-content/uploads/2017/05/Top-five-summer-hats-men-classic-Panama.jpg',
-        price:'$24'
+    id: 1,
+    title: 'Hats',
+    routeName: 'hats',
+    items: [
+      {
+        id: 1,
+        name: 'Brown Brim',
+        imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+        price: 25
       },
-      { 
-        id:2,
-        name:'Baseball Cap',
-        imageUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTr0ZJU_m6EyspEIw9W0Ry5sjAsTTXGZZo3Vw&usqp=CAU',
-        price:'$32'
+      {
+        id: 2,
+        name: 'Blue Beanie',
+        imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
+        price: 18
       },
-      { 
-        id:3,
-        name:'Star Cap',
-        imageUrl:'https://cdn.trendhunterstatic.com/thumbs/neighburr.jpeg',
-        price:'$21'
+      {
+        id: 3,
+        name: 'Brown Cowboy',
+        imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
+        price: 35
       },
-      { 
-        id:4,
-        name:'Sun Cap',
-        imageUrl:'https://www.dhresource.com/0x0/f2/albu/g3/M01/71/45/rBVaHVWLznWAYTkoAADpBBH3zKk807.jpg',
-        price:'$18'
+      {
+        id: 4,
+        name: 'Grey Brim',
+        imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
+        price: 25
       }
     ]
-  },
-
-  {
-    id:2,
-    title:'Jackets',
-    routename:'jackets',
-    items:[
-      { 
-        id:1,
-        name:'Army',
-        imageUrl:'https://tse3.mm.bing.net/th?id=OIP.sgdUqyFSK8lH8eupCJ0MjAHaHa&pid=Api&P=0&w=300&h=300',
-        price:'$41'
-      },
-      { 
-        id:2,
-        name:'WaterProof',
-        imageUrl:'https://ae01.alicdn.com/kf/HTB1KZ7ZrY5YBuNjSspoq6zeNFXag/2018-Jacket-Men-Army-Jacket-Army-Green-Multi-pocket-Waterproof-Jacket-Windbreaker-Men-Coat.jpg',
-        price:'$29'
-      },
-      { 
-        id:3,
-        name:'Faux Faur',
-        imageUrl:'https://tse4.mm.bing.net/th?id=OIP.DYkS5Z4TI4PzI1L2hl4ZjAHaL2&pid=Api&P=0&w=300&h=300',
-        price:'$27'
-      },
-      { 
-        id:4,
-        name:'Automn Jeans',
-        imageUrl:'https://tse3.mm.bing.net/th?id=OIP.jgFmVI8uUy-YFTa1r5pfrQHaHa&pid=Api&P=0&w=300&h=300',
-        price:'$24'
-      },
-    ]
-
-  },
-
-  {
-    id:3,
-    title:'Snekers',
-    routename:'snekers',
-    items:[
-      { 
-      id:1,
-      name:'White Brim',
-      imageUrl:'https://tse4.mm.bing.net/th?id=OIP.7t-Tn2xUHb8ZjqltkmTUsAHaHa&pid=Api&P=0&w=300&h=300',
-      price:'$20'
+   },
+{
+  id: 2,
+  title: 'Sneakers',
+  routeName: 'sneakers',
+  items: [
+    {
+      id: 5,
+      name: 'Adidas NMD',
+      imageUrl: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
+      price: 220
     },
-    { 
-      id:2,
-      name:'Air Mesh',
-      imageUrl:'https://tse2.mm.bing.net/th?id=OIP.1GNBPRacty3z40BynatcWAHaHa&pid=Api&P=0&w=300&h=300',
-      price:'$19'
+    {
+      id: 6,
+      name: 'Adidas Yeezy',
+      imageUrl: 'https://i.ibb.co/dJbG1cT/yeezy.png',
+      price: 280
     },
-    { 
-      id:3,
-      name:'Black High',
-      imageUrl:'https://tse3.mm.bing.net/th?id=OIP.yl2bsryJUTciioI5KRLKswHaHa&pid=Api&P=0&w=300&h=300',
-      price:'$28'
+    {
+      id: 7,
+      name: 'Black Converse',
+      imageUrl: 'https://i.ibb.co/bPmVXyP/black-converse.png',
+      price: 110
     },
-    { 
-      id:4,
-      name:'Pink  Leather',
-      imageUrl:'https://ae01.alicdn.com/kf/HTB1oZUNlRnTBKNjSZPfq6zf1XXaM/new2018-pink-sneakers-women-s-leather-running-shoe-breathable-mesh-ladies-shoes-sport-female-krasovki-Cushioning.jpg',
-      price:'$24'
-    },
+    {
+      id: 8,
+      name: 'Nike White AirForce',
+      imageUrl: 'https://i.ibb.co/1RcFPk0/white-nike-high-tops.png',
+      price: 160
+    }
   ]
-
-  },
-
-  {
-    id:4,
-    title:'Womens',
-    routename:'womens',
-    items:[
-      { 
-      id:1,
-      name:'Short Hair',
-      imageUrl:'https://www.lovely-hairstyles.com/wp-content/uploads/2016/10/Womens-Layered-Hairstyle-185x300.jpg',
-      price:'$121'
+},
+{
+  id: 3,
+  title: 'Jackets',
+  routeName: 'jackets',
+  items: [
+    {
+      id: 9,
+      name: 'Black Jean Shearling',
+      imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
+      price: 125
     },
-    { 
-      id:2,
-      name:'Red Hair',
-      imageUrl:'https://tse1.mm.bing.net/th?id=OIP.ly0GMn3JnSkq8D-WT8eAowHaLH&pid=Api&P=0&w=300&h=300',
-      price:'$149'
+    {
+      id: 10,
+      name: 'Blue Jean Jacket',
+      imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
+      price: 90
     },
-    { 
-      id:3,
-      name:'Straight Hair',
-      imageUrl:'https://www.gravetics.com/wp-content/uploads/2017/01/Hairstyle-for-fashionable-girl20.jpg',
-      price:'$109'
+    {
+      id: 11,
+      name:'Grey Jean Jacket',
+      imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
+      price: 90
     },
-    { 
-      id:4,
-      name:'Curley Hair',
-      imageUrl:'https://tse2.mm.bing.net/th?id=OIP.HiPYnK1E3dhclXrK8Ot1LQAAAA&pid=Api&P=0&w=300&h=300',
-      price:'$95'
-    },
+    {
+      id: 12,
+      name: 'Brown Shearling',
+      imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
+      price: 165
+    }
   ]
-
-  },
-
-  {
-    id:5,
-    title:'Mens',
-    routename:'mens',
-    items:[
-      { 
-      id:1,
-      name:'Bad',
-      imageUrl:'https://tse1.mm.bing.net/th?id=OIP.s-q_dfd4arh-b9ROonenMQHaHa&pid=Api&P=0&w=300&h=300',
-      price:'$231'
+},
+{
+  id: 4,
+  title: 'Womens',
+  routeName: 'womens',
+  items: [
+    {
+      id: 13,
+      name: 'Blue Tanktop',
+      imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
+      price: 25
     },
-    { 
-      id:2,
-      name:'Gentelman',
-      imageUrl:'https://tse2.mm.bing.net/th?id=OIP.48QVKs3VTD5TTTFrHirW7wHaIl&pid=Api&P=0&w=300&h=300',
-      price:'$153'
+    {
+      id: 14,
+      name: 'Floral Blouse',
+      imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
+      price: 20
     },
-    { 
-      id:3,
-      name:'Desi',
-      imageUrl:'http://www.fashioncentral.pk/wp-content/uploads/2017/02/Mens_Fashion/trendy_mens_clothing.jpg',
-      price:'$149'
+    {
+      id: 15,
+      name: 'Floral Dress',
+      imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
+      price: 80
     },
-    { 
-      id:4,
-      name:'Beard',
-      imageUrl:'https://tse3.mm.bing.net/th?id=OIP.eycqj1YG1Yw9x8e5IsUb1AHaIz&pid=Api&P=0&w=300&h=300',
-      price:'$103'
-    },
+    {
+      id: 16,
+      name: 'Red Dots Dress',
+      imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
+      price: 80
+    }
   ]
-
-  }
-]
+},
+{
+  id: 5,
+  title: 'Mens',
+  routeName: 'mens',
+  items: [
+    {
+      id: 17,
+      name: 'Camo Down Vest',
+      imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
+      price: 325
+    },
+    {
+      id: 18,
+      name: 'Floral T-shirt',
+      imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
+      price: 20
+    },
+    {
+      id: 19,
+      name: 'Black & White Longsleeve',
+      imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
+      price: 25
+    },
+    {
+      id: 20,
+      name: 'Pink T-shirt',
+      imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
+      price: 25
+    }
+  ]
+}
+];
 
 export default SHOP_DATA;
