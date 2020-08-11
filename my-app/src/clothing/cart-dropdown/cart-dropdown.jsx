@@ -22,8 +22,7 @@ const CartDropDown =({cartItems,history,toggleCartHidden,...otherProps})=>{
   </div>
 )};
 
-const mapStateToProps =createStructuredSelector
-({
+const mapStateToProps =createStructuredSelector({
   cartItems:selectCartItems
 });
 

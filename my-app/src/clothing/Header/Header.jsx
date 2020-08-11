@@ -1,11 +1,13 @@
 import React from 'react';
 import './Header.styles.scss';
-import {Link} from "react-router-dom";
-import {ReactComponent as HomeIcon} from '../../assets/crown.svg'; 
-import {auth} from '../../clothing/firebase/firebase.utils';
-import {connect} from 'react-redux';
 import CartIcon from '../../clothing/cart-icon/cart-icon';
 import CartDropDown from '../../clothing/cart-dropdown/cart-dropdown';
+import {ReactComponent as HomeIcon} from '../../assets/crown.svg'; 
+
+import {Link} from "react-router-dom";
+
+import {auth} from '../../clothing/firebase/firebase.utils';
+import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCurrentUser} from '../../redux/user/user.selectors';
 import {selectCartHidden} from '../../redux/cart/cart.selectors';
@@ -34,10 +36,8 @@ const Header =({currentUser,hidden}) =>(
 
         <CartIcon />    
       </div>
-      {
-        hidden? null : <CartDropDown/>
-      }
-  </div>
+         { hidden? null : <CartDropDown/> }
+      </div>
   
 )
 
