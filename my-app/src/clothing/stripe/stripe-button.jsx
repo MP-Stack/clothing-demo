@@ -12,7 +12,7 @@ const StripeCheckoutButton =({price}) =>{
   return(
     <StripeCheckout 
       label='Pay Now'
-      name="BRAIN'SKART Clothing Ltd."
+      name="BRAIN'SKART Pvt. Ltd."
       billingAddress
       shippingAddress
       image='https://svgshare.com/i/CUz.svg'
