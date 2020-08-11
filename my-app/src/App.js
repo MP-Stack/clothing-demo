@@ -8,7 +8,7 @@ import ShopPage from './clothing/shoppage/ShopPage';
 import {auth} from './clothing/firebase/firebase.utils';
 import {connect} from 'react-redux';
 import {setCurrentUser} from './redux/user/user.action';
-import CheckOut from './clothing/checkout/checkout';
+import CheckOut from './clothing/checkout-page/checkout';
 
 
 
