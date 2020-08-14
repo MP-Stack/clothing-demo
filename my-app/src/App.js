@@ -10,75 +10,40 @@ import {connect} from 'react-redux';
 import {setCurrentUser} from './redux/user/user.action';
 import CheckOut from './clothing/checkout-page/checkout';
 
-
-
-const HatsPage=() =>(
-  <div>
-    <h1> Hats Page </h1>
-  </div>
-);
-const Jackets=() =>(
-  <div>
-    <h1> Jackets Page </h1>
-  </div>
-);
-const Snekers=() =>(
-  <div>
-    <h1> Snekers Page </h1>
-  </div>
-);
-const Womens=() =>(
-  <div>
-    <h1> Women Page </h1>
-  </div>
-);
-const Mens=() =>(
-  <div>
-    <h1> Mens Page </h1>
-  </div>
-);
-
 class App extends Component{
   
-  unsubscribeFromAuth = null;
+  unsubscribeFromAuth=null;
 
-  componentDidMount(){
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user =>{
-      this.setState({currentUser:user});
-        console.log(user)
-    });
-  };
+componentDidMount(){
+  this.unsubscribeFromAuth = auth.onAuthStateChanged (user=>{
+    this.props.setCurrentUser(user);
+    // console.log(user);
+  })
+}
 
   componentWillUnmount(){
     this.unsubscribeFromAuth();
-  };
-
+  }
   
 
   render(){
-    console.log(this.props)
-  return (
-    <div>
-      <Header/>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/hats" component={HatsPage} />
-          <Route path="/jackets" component={Jackets} />
-          <Route path="/snekers" component={Snekers} />
-          <Route path="/womens" component={Womens} />
-          <Route path="/mens" component={Mens} />
-          <Route path="/shop" component={ShopPage} />
-          <Route path='/signin' component={SignInAndSignUpPage} /> 
-          <Route path="/checkout" component={CheckOut} /> 
-        </Switch>
-    </div>
-)}};
+    // console.log(this.props)
+      return (
+        <div>
+          <Header />
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/shop" component={ShopPage} />
+              <Route path='/signin' component={SignInAndSignUpPage} /> 
+              <Route path="/checkout" component={CheckOut} /> 
+            </Switch>
+        </div>
+    )}};
 
 
-const mapDispatchToProps=(dispatch)=>({
-      setCurrentUser:(user)=>dispatch(setCurrentUser(user))
-    
-})
+const mapDispatchToProps = dispatch =>({
+  setCurrentUser:user=>dispatch(setCurrentUser(user))
+});
  
 
 export default connect(null,mapDispatchToProps)(App);
