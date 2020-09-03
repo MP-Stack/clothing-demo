@@ -10,6 +10,7 @@ import StripeCheckoutButton from '../stripe/stripe-button';
 
 const CheckOut =({cartItems,total})=>(
   <div className='checkout-page'>
+    <h3>CheckOut Page</h3>
        <div className='checkout-header'>
           <div className='header-block'>
             <span>Products</span>

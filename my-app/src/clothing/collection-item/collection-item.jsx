@@ -8,6 +8,7 @@ const CollectionItem = ({item,addItem}) =>{
   const {imageUrl,price,name}= item ;
   return(
       <div className='collection-item'>
+        <h4>Collection Item Page</h4>
        <div className='image'
            style={{
                  backgroundImage:`url(${imageUrl})`}} />

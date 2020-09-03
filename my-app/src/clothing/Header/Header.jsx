@@ -6,7 +6,7 @@ import {ReactComponent as HomeIcon} from '../../assets/crown.svg';
 
 import {Link} from "react-router-dom";
 
-import {auth} from '../../clothing/firebase/firebase.utils';
+import firebase from 'firebase/app';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCurrentUser} from '../../redux/user/user.selectors';
@@ -30,7 +30,7 @@ const Header =({currentUser,hidden}) =>{
           </Link>
       {
         currentUser?
-         <div className="option" onClick={() => auth.signOut()}>SIGN OUT</div> 
+         <div className="option" onClick={() => firebase.auth().signOut()}>SIGN OUT</div> 
           :   
         <Link to='/signin' className="option"> SIGN IN </Link>
       }

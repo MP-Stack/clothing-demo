@@ -2,7 +2,8 @@ import React from 'react';
 import './Signup.scss';
 import FormInput from '../../clothing/form-input/form-input';
 import CustomButton from '../../clothing/custom-button/custom.button'; 
-import axios from 'axios';
+import {auth, createUserProfileDocument} from '../../clothing/firebase/firebase.utils';
+// import firebase from 'firebase/app';
 
 
 
@@ -19,19 +20,29 @@ class SignUp extends React.Component {
     this.setState ({[name]:value});
   };
 
-  handleSubmit = event =>{
+  handleSubmit = async event =>{
     event.preventDefault();
-    const User = {
-      displayName:this.state.displayName,
-      email:this.state.email,
-      password:this.state.password,
-      confirmPassword:this.state.confirmPassword
-    }
-    axios.post(`https://clothing-demo.firebaseio.com/marks.json`,{ User })
-    .then(res =>{
-      console.log (res);
-      console.log(res.data)
-    })
+    const {displayName,email,password,confirmPassword} = this.state;
+      if(password!==confirmPassword){
+        alert("password don't match");
+        return;
+      }
+
+        try{
+          const {user} = await auth.createUserWithEmailAndPassword(email,password);
+
+          await createUserProfileDocument(user,{displayName})
+          alert('New User Successfully')
+          this.setState({
+            displayName:'',
+            email:'',
+            password:'',
+            confirmPassword:''
+          })
+        }catch(error){
+          alert ('SignUp Failed')
+        }
+    
   }
  
 

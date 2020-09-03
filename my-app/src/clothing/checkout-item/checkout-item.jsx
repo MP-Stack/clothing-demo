@@ -10,6 +10,7 @@ const CheckoutItem=({cartItem,deleteItem,addItem,removeItem})=>{
     const {imageUrl,price,quantity,name}=cartItem;
   return(
   <div className="checkout-item">
+    <h3>Checkout Item Page</h3>
     <div className="image-container">
       <img src={imageUrl} alt='img' />
       </div>

@@ -20,14 +20,14 @@ class ShopPage extends React.Component {
 
     render(){
       const {match} =this.props;
-      // const { loading } = this.State;
+      const { loading } = this.state;
   return(
       <div className='shop-page'>
         < Route exact path={`${match.path}`} 
-          render={(props) =><CollectionOverviewWithSpinner isLoading={this.state.loading} {...props}/>}
+          render={(props) =><CollectionOverviewWithSpinner isLoading={loading} {...props}/>}
           />
         <Route path={`${match.path}/:collectionId`} 
-          render ={(props) =><CollectionPageWithSpinner isLoading ={this.state.loading} {...props} />} />
+          render ={(props) =><CollectionPageWithSpinner isLoading ={loading} {...props} />} />
        </div>
   )}}
     

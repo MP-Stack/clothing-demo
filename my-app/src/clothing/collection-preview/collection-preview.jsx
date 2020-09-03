@@ -4,6 +4,7 @@ import CollectionItem from '../../clothing/collection-item/collection-item'
 
 const CollectionPreview = ({title,items}) => (
   <div className='collection-preview' >
+    <h4>Collection Preview Page</h4>
       <h1 className='title'>{title}</h1>
       <div className='preview'>
           {items
