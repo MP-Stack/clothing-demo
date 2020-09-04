@@ -5,20 +5,22 @@ import {Route,Switch, Redirect} from "react-router-dom";
 import SignInAndSignUpPage from './clothing/Sign-In-and-Sign-Up/sign-in-and-sign-up';
 import Header from './clothing/Header/Header';
 import ShopPage from './clothing/shoppage/ShopPage';
-import {auth,createUserProfileDocument,} from './clothing/firebase/firebase.utils';
-// import {addCollectionAndDocuments} from './clothing/firebase/firebase.utils';
+import {auth,createUserProfileDocument} from './clothing/firebase/firebase.utils';
 import {connect} from 'react-redux';
 import {setCurrentUser} from './redux/user/user.action';
 import CheckOut from './clothing/checkout-page/checkout';
-// import {selectCollectionForPreview} from './redux/shop/shop.selectors';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import {createStructuredSelector} from 'reselect';
+// import {selectCollectionForPreview} from './redux/shop/shop.selectors';
+// import {addCollectionAndDocuments} from './clothing/firebase/firebase.utils';
 
 class App extends Component{
+  unsubscribeFromAuth=null;
   
   componentDidMount() {
     const {setCurrentUser} = this.props;
-    // const {collectionsArray} = this.props; 
+    // const {collectionsArray} = this.props;
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged (async userAuth=>{
       if(userAuth){
         const userRef = await createUserProfileDocument(userAuth);
@@ -36,11 +38,9 @@ class App extends Component{
         alert('User Signed Out')
       };
       setCurrentUser(userAuth);
-      // addCollectionAndDocuments('collections',collectionsArray.map(({title,items}) => ({title,items})))
+      // addCollectionAndDocuments('collections',collectionsArray.map(({title,items})=>({title,items})));
     }) 
   };
-
-  unsubscribeFromAuth=null;
 
 componentWillUnmount(){
     this.unsubscribeFromAuth();
@@ -67,7 +67,7 @@ componentWillUnmount(){
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
-  // collectionsArray: selectCollectionForPreview
+  // collectionsArray:selectCollectionForPreview
 })
 
 const mapDispatchToProps = dispatch =>({
