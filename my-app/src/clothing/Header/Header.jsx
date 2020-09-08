@@ -6,14 +6,14 @@ import {ReactComponent as HomeIcon} from '../../assets/crown.svg';
 
 import {Link} from "react-router-dom";
 
-import firebase from 'firebase/app';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCurrentUser} from '../../redux/user/user.selectors';
 import {selectCartHidden} from '../../redux/cart/cart.selectors';
+import { signoutStart } from '../../redux/user/user.action';
 
 
-const Header =({currentUser,hidden}) =>{
+const Header =({currentUser,hidden,signoutStart}) =>{
   return(
   <div className="header"> 
    
@@ -30,7 +30,7 @@ const Header =({currentUser,hidden}) =>{
           </Link>
       {
         currentUser?
-         <div className="option" onClick={() => firebase.auth().signOut()}>SIGN OUT</div> 
+         <div className="option" onClick={signoutStart}>SIGN OUT</div> 
           :   
         <Link to='/signin' className="option"> SIGN IN </Link>
       }
@@ -47,7 +47,10 @@ const Header =({currentUser,hidden}) =>{
 const mapStateToProps=createStructuredSelector({
     currentUser:selectCurrentUser,
     hidden:selectCartHidden
- 
+});
+
+const mapDispatchToprops = dispatch =>({
+  signoutStart:()=>dispatch(signoutStart())
 })
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps,mapDispatchToprops)(Header);
