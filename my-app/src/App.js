@@ -9,12 +9,15 @@ import {connect} from 'react-redux';
 import CheckOut from './clothing/checkout-page/checkout';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import {createStructuredSelector} from 'reselect';
+import {checkUserSession} from './redux/user/user.action';
 // import {selectCollectionForPreview} from './redux/shop/shop.selectors';
 // import {addCollectionAndDocuments} from './clothing/firebase/firebase.utils';
 
 class App extends Component{
  
   componentDidMount() {
+    const {checkUserSession} = this.props;
+    checkUserSession();
     // const {collectionsArray} = this.props;
 
     // this.unsubscribeFromAuth = auth.onAuthStateChanged (async userAuth=>{
@@ -63,6 +66,8 @@ const mapStateToProps = createStructuredSelector({
   // collectionsArray:selectCollectionForPreview
 })
 
- 
+const mapDispatchToProps=(dispatch) =>({
+  checkUserSession:()=>dispatch(checkUserSession())
+})
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps,mapDispatchToProps)(App);

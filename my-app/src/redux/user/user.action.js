@@ -55,3 +55,28 @@ export const signoutFailure = (error) =>{
     payload:error
   }
 };
+
+export const checkUserSession=() =>{
+  return{
+    type:UserActionTypes.CHECK_USER_SESSION
+  }
+}
+
+export const signUpStart = (userCredentials) =>{
+  return{
+    type:UserActionTypes.SIGN_UP_START,
+    payload:userCredentials
+  }
+};
+export const signUpSuccess = ({user,additionalData}) =>{
+  return{
+    type:UserActionTypes.SIGN_UP_SUCCESS,
+    payload:{user,additionalData}
+  }
+};
+export const signUpFailure = (error) =>{
+  return{
+    type:UserActionTypes.SIGN_UP_FAILURE,
+    payload:error
+  }
+};
