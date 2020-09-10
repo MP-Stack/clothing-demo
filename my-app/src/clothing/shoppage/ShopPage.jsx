@@ -1,4 +1,4 @@
-import React  from 'react';
+import React,{useEffect}from 'react';
 import {Route} from 'react-router-dom';
 import {createStructuredSelector} from 'reselect';
 
@@ -13,19 +13,16 @@ import WithSpinner from '../../clothing/with-spinner/with-spinner';
 const CollectionOverviewWithSpinner = WithSpinner(CollectionOverview);
 const CollectionPageWithSpinner = WithSpinner(CollectionPage);
 
-class ShopPage extends React.Component {
-  
+const ShopPage = ({fetchCollectionsStart,match,isCollectionFetching,isCollectionLoaded}) => {
+  useEffect(() => {
+    fetchCollectionsStart();
+  }, [fetchCollectionsStart])
 
-    componentDidMount(){
-         const {fetchCollectionsStart} =this.props;
-         fetchCollectionsStart();
-    };
+    // componentDidMount(){
+    //      const {} =this.props;
+    //      fetchCollectionsStart();
+    // };
    
-
-    render(){
-      const {match} =this.props;
-      const {isCollectionFetching} = this.props;
-      const{isCollectionLoaded} = this.props;
   return(
       <div className='shop-page'>
         <h3>Shop Page</h3>
@@ -36,7 +33,7 @@ class ShopPage extends React.Component {
          render={(props)=>
          (<CollectionPageWithSpinner isLoading={!isCollectionLoaded} {...props} />)} />
        </div>
-  )}}
+  )}
 
   const mapStateToProps = createStructuredSelector({
     isCollectionFetching: selectIsCollectionFetching,

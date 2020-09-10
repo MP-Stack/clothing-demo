@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import './App.css'
 import HomePage from './clothing/homepage/HomePage';
 import {Route,Switch, Redirect} from "react-router-dom";
@@ -13,37 +13,35 @@ import {checkUserSession} from './redux/user/user.action';
 // import {selectCollectionForPreview} from './redux/shop/shop.selectors';
 // import {addCollectionAndDocuments} from './clothing/firebase/firebase.utils';
 
-class App extends Component{
- 
-  componentDidMount() {
-    const {checkUserSession} = this.props;
+const App =({checkUserSession,currentUser}) =>{
+  useEffect(() => {
     checkUserSession();
-    // const {collectionsArray} = this.props;
+  }, [checkUserSession])
 
-    // this.unsubscribeFromAuth = auth.onAuthStateChanged (async userAuth=>{
-    //   if(userAuth){
-    //     const userRef = await createUserProfileDocument(userAuth);
+  // componentDidMount() {
+  //   checkUserSession();
+  //   const {collectionsArray} = this.props;
 
-    //     userRef.onSnapshot(snapshot=>{
-    //       this.setState({
-    //         currentUser:{
-    //           id:snapshot.id,
-    //           ...snapshot.data()
-    //         }
-    //       },()=>
-    //       console.log(this.state))
-    //     })
-    //   }else{
-    //     alert('User Signed Out')
-    //   };
-    //   setCurrentUser(userAuth);
-      // addCollectionAndDocuments('collections',collectionsArray.map(({title,items})=>({title,items})));
-    // }) 
+  //   this.unsubscribeFromAuth = auth.onAuthStateChanged (async userAuth=>{
+  //     if(userAuth){
+  //       const userRef = await createUserProfileDocument(userAuth);
 
-  };
+  //       userRef.onSnapshot(snapshot=>{
+  //         this.setState({
+  //           currentUser:{
+  //             id:snapshot.id,
+  //             ...snapshot.data()
+  //           }
+  //         },()=>
+  //         console.log(this.state))
+  //       })
+  //     }else{
+  //       alert('User Signed Out')
+  //     };
+  //     setCurrentUser(userAuth);
+  //     addCollectionAndDocuments('collections',collectionsArray.map(({title,items})=>({title,items})));
+  //   })};
 
-  render(){
-    console.log(this.props.currentUser)
       return (
         <div>
           <Header />
@@ -53,13 +51,13 @@ class App extends Component{
               <Route path="/checkout" component={CheckOut} /> 
               <Route exact path='/signin' 
                 render={()=>
-                      this.props.currentUser?
+                      currentUser?
                       (<Redirect to='/' />) : 
                       (<SignInAndSignUpPage />) }
                />
             </Switch>
       </div>
-    )}};
+    )}
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
