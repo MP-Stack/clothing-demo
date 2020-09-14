@@ -4,21 +4,13 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';
 import App from './App';
-import {Provider} from 'react-redux';
-import {store, persistor} from './redux/store';
-import {BrowserRouter} from "react-router-dom";
-import { PersistGate} from 'redux-persist/integration/react';
 
+import {BrowserRouter as Router} from 'react-router-dom';
 
 ReactDOM.render(
-  <Provider store = {store}>
-     <BrowserRouter>
-         <PersistGate persistor={persistor}>
+          <Router>
             <App />
-        </PersistGate>
-     </BrowserRouter> 
-  </Provider>
-  
+          </Router>
   ,document.getElementById('root'));
 
 
